@@ -7,7 +7,7 @@
 
 ### A Short Summary
 
-1. Letter, Numbers, Special Characters
+1. Letters, Numbers, Special Characters
 
 2. Hexadecimal
 
