@@ -1,5 +1,7 @@
 # Import Modules
 import strgen
+import string
+import random
 
 # Variables
 length_of_password = 0
@@ -79,7 +81,7 @@ def password_kind_input():
         password_kind_input.password = strgen.StringGenerator("[\d]{%i}"%(password_length.length_of_password)).render()
     # If selection is letters
     elif (Kind_of_password == 6):
-        password_kind_input.password = strgen.StringGenerator("[\w]{%i}"%(password_length.length_of_password)).render()
+        password_kind_input.password = "".join(random.sample(string.ascii_letters,password_length.length_of_password))
     # If selection is special characters
     elif (Kind_of_password == 7):
         password_kind_input.password = strgen.StringGenerator("[\p]{%i}"%(password_length.length_of_password)).render()
@@ -108,3 +110,4 @@ def init():
 
 # Init
 init()
+
