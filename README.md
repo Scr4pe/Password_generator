@@ -7,17 +7,19 @@
 
 ### A Short Summary
 
-1. Letters, Numbers, Special Characters
+1. Letters, Numbers, Punctuations
 
 2. Hexadecimal
 
-3. Letters, Numbers
+3. Letters, Punctuations
 
-4. Letters, Special Characters
+4. Letters, Numbers
 
-5. Only Letters
+5. Number, Punctuations
 
 6. Only Numbers
 
-7. Only Special Characters
+7. Only Letters
+
+8. Only Punctuations
 
