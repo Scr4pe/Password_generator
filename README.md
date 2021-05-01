@@ -1,6 +1,6 @@
 # Password Generator
 
-## **My first little project**
+### ***My first little project***
 
 ## *Project description*
 > Generates Multiple kinds of Passwords via commandline
