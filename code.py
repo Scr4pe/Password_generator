@@ -7,12 +7,12 @@ import random
 length_of_password = 0
 kind_of_password = 0
 Start_text = "\n\nWelcome to the Password generator\n"
-Options_text = "\nChoose which kind of password you want to create:\n1. Letters, Special characters, Numbers\n2. Letters, Special characters\n3. Numbers, Special characters\n4. Letters, Numbers\n5. Only Numbers\n6. Only Letters\n7. Only Special characters\n"
+Options_text = "\nChoose which kind of password you want to create:\n1. Letters, Punctuations, Numbers\n2. Letters, punctuation\n3. Numbers, punctuation\n4. Letters, Numbers\n5. Only Numbers\n6. Only Letters\n7. Only punctuation\n"
 length_of_password_text = "\nChoose the length of your Password"
 User_input_invalid = "The user selected an invalid value\n"
 user_selected = ""
-password_length_short ="Your Password is to short"
-password_length_long = "Your Password is to long"
+password_length_short ="Your Password is to short below 14 characters"
+password_length_long = "Your Password is to long above 128 characters\nThis Application doesn't support so long characters\n"
 password_length_change = "\nDo you want to change the length below?\n[Y/N] "
 password_length_remain = "Password legth remains as you selected\n"
 password = ""
@@ -59,32 +59,68 @@ def password_length():
             print(User_input_invalid)
             password_length()
 
-# This function .....
+# This function creates the password
 def password_kind_input():
     print(Options_text)
     # Decision 1 which kind of PSW
     Kind_of_password = int(input())
-    # If selection is letters, special characters, numbers
+
+    # If selection is letters, punctuations, numbers
     if (Kind_of_password == 1):
-        password_kind_input.password = strgen.StringGenerator("[\w\d\p]{%i}"%(password_length.length_of_password)).render()
-    # If selection is letters, special characters
-    elif (Kind_of_password == 2):
-        password_kind_input.password = strgen.StringGenerator("[\w\p]{%i}"%(password_length.length_of_password)).render()
-    # If selection is numbers, special characters
+        # Generate a password in which there are 
+        # no repeating letters (lowercase or uppercase) and numbers and punctations
+        # And cutted it to the selected length 
+        password_kind_input.password = "".join(random.sample((string.ascii_uppercase + string.ascii_lowercase + string.punctuation + string.digits),password_length.length_of_password))
+
+    # If selection is hexadecimal
+    if (Kind_of_password == 2):
+        # Generate a password in which there are 
+        # no repeating letters (lowercase or uppercase) and numbers and punctations
+        # And cutted it to the selected length 
+        password_kind_input.password = "".join(random.sample((string.ascii_uppercase + string.ascii_lowercase + string.punctuation + string.digits),password_length.length_of_password))
+
+    # If selection is letters, punctuations
     elif (Kind_of_password == 3):
-        password_kind_input.password = strgen.StringGenerator("[\d\p]{%i}"%(password_length.length_of_password)).render()
+        # Generate a password in which there are
+        # no repeating numbers and punctations
+        # And cutted it to the selected length
+        password_kind_input.password = "".join(random.sample((string.uppercase + string.ascii_lowercase + string.punctuation),password_length.length_of_password))
+
     # If selection is letters, numbers
     elif (Kind_of_password == 4):
-        password_kind_input.password = strgen.StringGenerator("[\w\d]{%i}"%(password_length.length_of_password)).render()
-    # If selection is numbers
+        # Generate a password in which there are
+        # no repeating letters (lowercase or uppercase) and numbers
+        # And cutted it to the selected length
+        password_kind_input.password = "".join(random.sample((string.digits + string.ascii_lowercase + string.ascii_uppercase),password_length.length_of_password))
+
+    # If selection is numbers, punctuations
     elif (Kind_of_password == 5):
-        password_kind_input.password = strgen.StringGenerator("[\d]{%i}"%(password_length.length_of_password)).render()
-    # If selection is letters
+        # Generate a password in which there are
+        # no repeating numbers and punctations
+        # And cutted it to the selected length
+        password_kind_input.password = "".join(random.sample((string.digits + string.punctuation),password_length.length_of_password))
+
+    # If selection is only numbers
     elif (Kind_of_password == 6):
-        password_kind_input.password = "".join(random.sample(string.ascii_letters,password_length.length_of_password))
-    # If selection is special characters
+        # Generate a password in which there are
+        # no repeating numbers
+        # And cutted it to the selected length        
+        password_kind_input.password = "".join(random.sample(string.digits,password_length.length_of_password))
+
+    # If selection is only letters
     elif (Kind_of_password == 7):
-        password_kind_input.password = strgen.StringGenerator("[\p]{%i}"%(password_length.length_of_password)).render()
+        # Generate a password in which there are
+        # no repeating letters (lowercase or uppercase)
+        # And cutted it to the selected length
+        password_kind_input.password = "".join(random.sample((string.ascii_lowercase + string.ascii_uppercase),password_length.length_of_password))
+
+    # If selection is only punctuations    
+    elif (Kind_of_password == 8):
+        # Generate a password in which there are
+        # no repeating punctuations
+        # And cutted it to the selected length        
+        password_kind_input.password = "".join(random.sample(string.punctuation,password_length.length_of_password))
+
     # If the user selection is an invalid value
     else:
         # Start invalid function
