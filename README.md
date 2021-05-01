@@ -3,7 +3,7 @@
 # **Still under Construction**
 
 ## *Project description*
-> Generates Multiple kinds of Passwords
+> Generates Multiple kinds of Passwords via commandline
 
 ### A Short Summary
 
