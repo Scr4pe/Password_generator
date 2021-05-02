@@ -16,10 +16,3 @@
 4. Letters, Numbers
 
 5. Number, Punctuations
-
-6. Only Numbers
-
-7. Only Letters
-
-8. Only Punctuations
-
