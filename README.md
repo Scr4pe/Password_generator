@@ -2,15 +2,17 @@
 
 ## *Project description*
 
-> I made this project to learn more about Python3. This project is very easy to use because all inputs follow a easy guidline by the script.
+I made this project to learn more about Python3. This project is very easy to use because all inputs follow a easy guidline by the script.
 
-> *results* This script creates following outputs all kinds of combinations of Letters, Numbers, punctations. And Hexadecimal.
+*Results* of this script creates following outputs all kinds of combinations of Letters, Numbers, punctations. And Hexadecimal.
 
 ## Installation
 
 ### Requirements
 
 - Python3
+
+### Usage
 
 You'll be asked:
 
